@@ -1,8 +1,8 @@
-#### iOS 开法笔记
+## UITableView 相关资料
+- 一句代码解决UITableView 中的分割线顶格问题
 
 ```objc
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.categories.count;
-}
+
+self.tableView.separatorInset = UIEdgeInsetsZero;
+
 ```
-#### 测试
