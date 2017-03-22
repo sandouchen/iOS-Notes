@@ -22,3 +22,66 @@ end
 ```
 - esc,:wq 保存退出
 - pod install
+
+--------------------
+## 使用Xib AutoLayout布局控件设置规定尺寸但显示效果不是自己想要的，加入以下属性
+
+```objc
+self.autoresizingMask = UIViewAutoresizingNone;
+```
+
+--------------------
+## 隐藏Group TableView上边多余的间隔
+- 这个间隔其实是一个被 UITableView 默认填充的 HeaderView。而且，视图的高度不能为0，否则完全不起效果。但我们用下面的代码创建一个高度特别小的 HeaderView 时，上面的边距就不见了
+
+```objc
+self.tableView.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, CGFLOAT_MIN)];
+```
+
+--------------------
+## 跳转到苹果商店下载页面/评论页面
+- 跳转到苹果商店下载页面
+
+```objc
+NSString *str = [NSString stringWithFormat:@"itms-apps://itunes.apple.com/app/id%d", app_id];
+```
+
+```objc
+[[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]];
+```
+
+- 跳转到苹果商店评论页面
+
+```objc
+NSString *str = [NSString stringWithFormat:@"http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?id=%d&pageNumber=0&sortOrdering=2&type=Purple+Software&mt=8",app_id];
+```
+
+```objc
+[[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]];
+```
+
+---------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
