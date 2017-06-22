@@ -61,7 +61,20 @@ NSString *str = [NSString stringWithFormat:@"http://itunes.apple.com/WebObjects/
 ```
 
 ---------------------
+## 在一个自定义的View中,或者自定义cell中,modal出一个控制器建议使用
+```objc
+[UIApplication sharedApplication].keyWindow.rootViewController;
+```
 
+代替
+
+```objc
+self.window.rootViewController
+```
+
+因为程序可能不止一个window,self.window可能不是主窗口;
+
+---------------------
 
 
 
